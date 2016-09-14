@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 7 — Micro clearfix</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+		pre {
+			-moz-tab-size: 2;
+			-o-tab-size: 2;
+			tab-size: 2;
+		}
+		pre,
+		code,
+		samp,
+		var {
+			word-wrap: break-word;
+			white-space: pre-wrap;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 7 — Micro clearfix</h1>
+
+<pre><code>/* For modern browsers */
+.group:before,
+.group:after {
+content: " ";
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.group {
+*zoom: 1;
+}</code></pre>
+
+<ul>
+	<li><a href="http://nicolasgallagher.com/micro-clearfix-hack/" title="A new micro clearfix hack &#8211;  Nicolas Gallagher">A new micro clearfix hack</a>, by Nicolas Gallagher</li>
+	<li><a href="http://dabblet.com/gist/3897248" title="dabblet.com">Basic float-clearing methods</a> (Dabblet)</li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

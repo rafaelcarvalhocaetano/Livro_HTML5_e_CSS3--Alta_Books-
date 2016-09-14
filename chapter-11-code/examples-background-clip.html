@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="UTF-8">
+	<title>2.11 Background Clip Demos</title>
+<link rel="stylesheet" href="../includes/main.css" charset="utf-8" />
+<!-- extra styles here or added via targeting ids with <style scoped>  -->
+<style type="text/css" media="screen">
+
+/*html {
+	background-image:url(img/earth1.jpg);
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	-moz-background-size:cover;
+	background-size:cover;
+	color:rgb(255,255,255);
+}*/
+
+div#introduction {
+  border:5px dashed rgb(255,0,0);
+  background:url(img/bg-moon.jpg) 50% 50%;
+  padding:0 20px;
+  color:rgb(255,255,255);
+  -moz-background-clip:padding;  
+  -webkit-background-clip:padding-box;
+  background-clip:padding-box;
+}
+
+div#introduction2 {
+  border:5px dashed rgb(255,0,0);
+  background:url(img/bg-moon.jpg) 50% 50%;
+  padding:0 20px;
+  color:rgb(255,255,255); 
+  -webkit-background-clip:content-box;
+  background-clip:content-box;
+}
+
+div#introduction3 {
+  border:5px dashed rgb(255,0,0);
+  background:url(img/bg-moon.jpg) 50% 50%;
+  padding:0 20px;
+  color:rgb(255,255,255);
+  -moz-background-clip:border-box;
+  -webkit-background-clip:border-box;
+  background-clip:border-box;
+}
+
+</style>	
+</head>
+<body>
+
+<header>
+	<hgroup>
+		<h1>The Original Space Pioneers</h1>
+		<h2>America's Unsung Heroes</h2>
+	</hgroup>
+</header>
+
+<article>
+		
+	<h1>Padding Box</h1>
+	<div id="introduction">
+		<!-- This <div> is here to show that we can still use <div> elements and they haven't been replaced lock, stock and barrell by the new semantic elements (a misunderstanding we keep running into in workshops). We can use this <div> down the line to style the opening paragraph differently. -->
+		<p>Before humans were launched into space, <a href="http://en.wikipedia.org/wiki/Animals_in_space">many animals were propelled heavenwards</a> to pave the way for mankind's pioneering endeavours. These original pioneers, including <a href="http://thewebevolved.com/monkeys">numerous monkeys</a>, served their nations in order to investigate the biological effects of space travel.</p>
+		
+		<p>Perhaps the most famous animal astronaut is <a href="http://en.wikipedia.org/wiki/Laika">Laika</a>, the Soviet space dog who made her historic flight on November 3, 1957. The United States preferred to use monkeys for its missions and launched numerous monkey flights primarily between 1948 and 1961 paving the way for manned missions.</p>
+		
+		<p>Thirty-two monkeys flew in the space program; each had only one mission. Numerous back-up monkeys also went through the programs but never flew. Monkeys from several species were used, including rhesus monkeys, cynomolgus monkeys, and squirrel monkeys, as well as pig-tailed macaques.</p>
+	</div>
+    
+    <h1>Content Box (no FF)</h1>
+	<div id="introduction2">
+		<!-- This <div> is here to show that we can still use <div> elements and they haven't been replaced lock, stock and barrell by the new semantic elements (a misunderstanding we keep running into in workshops). We can use this <div> down the line to style the opening paragraph differently. -->
+		<p>Before humans were launched into space, <a href="http://en.wikipedia.org/wiki/Animals_in_space">many animals were propelled heavenwards</a> to pave the way for mankind's pioneering endeavours. These original pioneers, including <a href="http://thewebevolved.com/monkeys">numerous monkeys</a>, served their nations in order to investigate the biological effects of space travel.</p>
+		
+		<p>Perhaps the most famous animal astronaut is <a href="http://en.wikipedia.org/wiki/Laika">Laika</a>, the Soviet space dog who made her historic flight on November 3, 1957. The United States preferred to use monkeys for its missions and launched numerous monkey flights primarily between 1948 and 1961 paving the way for manned missions.</p>
+		
+		<p>Thirty-two monkeys flew in the space program; each had only one mission. Numerous back-up monkeys also went through the programs but never flew. Monkeys from several species were used, including rhesus monkeys, cynomolgus monkeys, and squirrel monkeys, as well as pig-tailed macaques.</p>
+	</div>
+    
+    <h1>Border Box (This is default)</h1>
+	<div id="introduction3">
+		<!-- This <div> is here to show that we can still use <div> elements and they haven't been replaced lock, stock and barrell by the new semantic elements (a misunderstanding we keep running into in workshops). We can use this <div> down the line to style the opening paragraph differently. -->
+		<p>Before humans were launched into space, <a href="http://en.wikipedia.org/wiki/Animals_in_space">many animals were propelled heavenwards</a> to pave the way for mankind's pioneering endeavours. These original pioneers, including <a href="http://thewebevolved.com/monkeys">numerous monkeys</a>, served their nations in order to investigate the biological effects of space travel.</p>
+		
+		<p>Perhaps the most famous animal astronaut is <a href="http://en.wikipedia.org/wiki/Laika">Laika</a>, the Soviet space dog who made her historic flight on November 3, 1957. The United States preferred to use monkeys for its missions and launched numerous monkey flights primarily between 1948 and 1961 paving the way for manned missions.</p>
+		
+		<p>Thirty-two monkeys flew in the space program; each had only one mission. Numerous back-up monkeys also went through the programs but never flew. Monkeys from several species were used, including rhesus monkeys, cynomolgus monkeys, and squirrel monkeys, as well as pig-tailed macaques.</p>
+	</div> 
+         
+</article>
+
+<footer>
+	<p><small>The Space Pioneers web site is an example site, designed to accompany  <a href="http://www.thewebevolved.com">The Web Evolved</a>, published by Apress. Text: The Web Evolved; Design:�Jonny Campbell.</small></p>
+	<p><small>HTML + CSS released under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license" title="Share, Remix, Attribute">Creative Commons Attribution 3.0 license</a>.</small></p>
+	<p><small>Photography &copy; <a href="http://www.istockphoto.com" title="Purchase royalty free stock photos at iStockphoto.com.">iStockphoto</a></small></p>
+</footer>
+
+	
+</body>
+</html>

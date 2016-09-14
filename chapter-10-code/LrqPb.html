@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=UTF-8>
+  <title>Fancy Font.js example | Web Evolved Chapter 10</title>    
+  <script src="http://raw.github.com/Pomax/Font.js/master/Font.js"></script>
+  <script>
+    window.onload=function(){
+    var font = new Font();
+
+    font.onload = function() { 
+      document.body.className = 'font-loaded';
+    };
+
+    font.onerror = function(err) {
+    document.body.className = 'font-error';   
+    }    
+      
+    font.fontFamily = 'Ultra';
+    font.src = font.fontFamily;
+
+    }
+  </script>
+  <style type='text/css'>
+    @import url(http://fonts.googleapis.com/css?family=Ultra);
+
+    #fontjs { 
+        visibility: hidden; 
+        opacity: 0; 
+        -o-transition: opacity 1s linear;
+        -moz-transition: opacity 1s linear;    
+        -ms-transition: opacity 1s linear;    
+        -webkit-transition: opacity 1s linear;    
+    }
+
+    .font-loaded #fontjs { 
+        visibility: visible; 
+        opacity: 1; 
+        font-family: 'Ultra', serif; 
+    }
+
+    .font-error #fontjs {
+        visibility: visible:
+        opacity: 1;
+        font-family: sans-serif;
+        font-weight: bold;
+    } 
+  </style>
+</head>
+<body>
+  <p id="fontjs">Fancy font-loading with transitions.</p>
+</body>
+</html>
+

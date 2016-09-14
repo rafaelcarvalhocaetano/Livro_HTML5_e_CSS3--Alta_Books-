@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Example 11 — Changing transforms with a 3D transform-origin (Figure 12-14)</title>
+<style>
+/* Example 11 — Changing transforms with a 3D transform-origin  (Figure 12-14) */
+/* From Beginning HTML5 and CSS3 — The Web Evolved http://thewebevolved.com/ */
+/* Comment out transition while editing CSS ;) */
+figure div, figure span {
+  -webkit-transition: all 1s;
+     -moz-transition: all 1s;
+      -ms-transition: all 1s;
+       -o-transition: all 1s;
+          transition: all 1s;
+}
+
+body {
+	width: 80%;
+	max-width: 42em;
+	margin: auto;
+	font: 1em/1.5 Georgia, serif;
+}
+h1 {
+	font-weight: normal;
+}
+hr,
+footer {
+	margin: 2.5em 0;
+}
+pre {
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+}
+pre,
+code,
+samp,
+var {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+figcaption {
+	clear: left;
+	padding-top: 1.5em;
+}
+
+figure div {
+  float: left;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 9% .75em 0;
+  border: 3px solid #000;
+  border-radius: .5em;
+  background-color: #fff;
+  background-color: rgba(255,255,255,.7);
+  -webkit-perspective: 800px;
+     -moz-perspective: 800px;
+      -ms-perspective: 800px;
+          perspective: 800px;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+figure .right-bottom {
+  margin-right: 0;
+}
+figure span {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin: 1px;
+  border: 3px solid #555;
+  border-radius: .7em;
+  background: #ddd;
+  -webkit-transform: translateZ(-48px);
+     -moz-transform: translateZ(-48px);
+      -ms-transform: translateZ(-48px);
+       -o-transform: translateZ(-48px);
+          transform: translateZ(-48px);
+}
+
+figure p {
+  margin: 0;
+  text-align: center;
+}
+figure:hover div {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+figure:hover span {
+  -webkit-transform: rotate3d(1,1,0,180deg);
+     -moz-transform: rotate3d(1,1,0,180deg);
+      -ms-transform: rotate3d(1,1,0,180deg);
+       -o-transform: rotate3d(1,1,0,180deg);
+          transform: rotate3d(1,1,0,180deg);
+}
+figure .left-top span {
+  -webkit-transform-origin: left top 20px;
+     -moz-transform-origin: left top 20px;
+      -ms-transform-origin: left top 20px;
+       -o-transform-origin: left top 20px;
+          transform-origin: left top 20px;
+  -webkit-border-top-left-radius: 0;
+      -moz-border-radius-topleft: 0;
+          border-top-left-radius: 0;
+}
+figure .left-bottom span {
+  -webkit-transform-origin: left bottom 20px;
+     -moz-transform-origin: left bottom 20px;
+      -ms-transform-origin: left bottom 20px;
+       -o-transform-origin: left bottom 20px;
+          transform-origin: left bottom 20px;
+  -webkit-border-top-bottom-radius: 0;
+     -moz-border-radius-bottomleft: 0;
+         border-bottom-left-radius: 0;
+}
+figure .right-top span {
+  -webkit-transform-origin: right top 80px;
+     -moz-transform-origin: right top 80px;
+      -ms-transform-origin: right top 80px;
+       -o-transform-origin: right top 80px;
+          transform-origin: right top 80px;
+  -webkit-border-top-right-radius: 0;
+      -moz-border-radius-topright: 0;
+          border-top-right-radius: 0;
+}
+figure .right-bottom span {
+  -webkit-transform-origin: right bottom 160px;
+     -moz-transform-origin: right bottom 160px;
+      -ms-transform-origin: right bottom 160px;
+       -o-transform-origin: right bottom 160px;
+          transform-origin: right bottom 160px;
+  -webkit-border-bottom-right-radius: 0;
+      -moz-border-radius-bottomright: 0;
+          border-bottom-right-radius: 0;
+}
+
+</style>
+</head>
+<body>
+<h1>Example 11 — Changing transforms with a 3D transform-origin (Figure 12-14)</h1>
+
+
+<figure id="transform-origin-3d">
+<pre class="callout"><code>.container {perspective: 800px;}
+.container:hover span {transform: rotate3d(1,1,0,180deg); /* inner box */}
+.top-left {transform-origin: left top 20px;}
+.bottom-left {transform-origin: left bottom 40px;}
+.top-right {transform-origin: right top 80px;}
+.bottom-right {transform-origin: right bottom 160px;}</code></pre>
+<div class="left-top">
+<span></span>
+<p>↑ top left</p>
+</div>
+<div class="left-bottom">
+<span></span>
+<p>↑ bottom left</p>
+</div>
+<div class="right-top">
+<span></span>
+<p>↑ top right</p>
+</div>
+<div class="right-bottom">
+<span></span>
+<p>↑ bottom right</p>
+</div>
+<figcaption>Examples of the difference a 3D <code>transform-origin</code> with successively larger <val>Z</val> values makes to <code>transform: rotate()</code>. We’ve also added <code>perspective</code> and <code>transform-style: preserve-3d;</code> to give the illusion of 3D.</figcaption>
+</figure>
+
+<hr />
+
+<ul>
+	<li><a href="http://dev.w3.org/csswg/css3-3d-transforms/#transform-origin-property" title="CSS 3D Transforms">CSS 3D Transforms Module Level 3 — The ‘transform-origin’ Property</a></li>
+	<li><a href="http://dabblet.com/gist/4187065" title="dabblet.com">This example on Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 12</footer>
+
+</body>
+</html>

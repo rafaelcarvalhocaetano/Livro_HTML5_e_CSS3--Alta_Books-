@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 1 — The Box Model</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 1 — The Box Model (Figure 9-3)</h1>
+
+<div class="box">
+	<style scoped>
+	.box {
+		width: 240px;
+		height: 160px;
+		margin: 24px 48px; /* = 24px 48px 24px 48px */
+		border: 1px solid #ddd;
+		padding: 12px 18px 6px; /* = 12px 18px 6px 18px */
+	}
+	</style>
+	<h1>CSS.</h1>
+	<p>It’s boxes all the way down…</p>
+</div>
+
+<hr>
+
+<ul>
+	<li><a href="http://www.w3.org/TR/CSS2/box.html" title="Box model">The Box Model</a> (CSS 2.1)</li>
+	<li><a href="http://dabblet.com/gist/3980052" title="dabblet.com">This example in Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

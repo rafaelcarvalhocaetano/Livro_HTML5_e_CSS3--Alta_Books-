@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 7 — The ol, dl, and cite elements</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 7 — The <code>ol</code>, <code>dl</code>, and <code>cite</code> element</h1>
+
+<!-- Continuing a previous list with value="" -->
+<ol type="I">
+	<li value="7">seventh item</li>
+	<li>eighth item</li>
+	<li>ninth item</li>
+</ol>
+
+<hr>
+
+<!-- Continuing a previous list with start="" -->
+<ol type="I" start="7">
+	<li>seventh item</li>
+	<li>eighth item</li>
+	<li>ninth item</li>
+</ol>
+
+<hr>
+
+<dl>
+	<dt lang="en"><dfn>rocket</dfn></dt>
+	<dt lang="ja"><dfn>ロケット</dfn></dt>
+	<dd lang="en">A vehicle that is propelled by the high-speed expulsion of exhaust gases, from propellants the vehicle carries.</dd>
+</dl>
+
+<hr>
+
+<dl>
+	<dt>Camera</dt>
+	<dd>Canon EOS 5D Mark II</dd>
+	<dt>Exposure</dt>
+	<dd>0.01 sec (1/100)</dd>
+	<dt>Aperture</dt>
+	<dd>f/1.2</dd>
+</dl>
+
+<hr>
+
+<p>While Remy and Bruce did a masterful job on <cite>Introducing HTML5</cite>, I’m not sure about that shade of brown.</p>
+<p>While Remy and Bruce did a masterful job on <cite><a href="http://introducinghtml5.com/">Introducing HTML5</a></cite>, I’m not sure about that shade of brown.</p>
+
+<hr>
+
+<blockquote>
+	<p>A person’s name is not the title of a work — even if people call that person a piece of work</p>
+</blockquote>
+<p><cite><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level- semantics.html#the-cite-element">HTML Living Standard</a></cite>, WHATWG, retrieved 25 March 2012</p>
+
+<hr>
+
+<ul>
+	<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#the-ol-element" title="4.5 Grouping content — HTML Standard"><code>ol</code></a></li>
+	<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#the-dl-element" title="4.5 Grouping content — HTML Standard"><code>dl</code></a></li>
+	<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-cite- element" title="4.6 Text-level semantics — HTML Standard"><code>cite</code></a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 4</footer>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 6 — Positioning schemes</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+		/* Positioning schemes comparison */
+		/* position: static|relative|absolute|fixed; */
+		/* border-box all the things */
+		* {
+			box-sizing: border-box;
+		}
+		.two-up {
+			overflow: hidden;
+			margin: 3em auto;
+			width: 29.5em;
+			font-size: 1.5em;
+		}
+		.wrapper {
+			/* relative for .fixed */
+			position: relative;
+			width: 14em;
+			margin: auto;
+			border: 2px solid #999;
+			padding: 0.75em 1.5em;
+		}
+		.left {
+			float: left;
+		}
+		.right {
+			float: right;
+		}
+		.body {
+			border: 2px solid #ccc;
+		}
+		.fade {
+			opacity: 0.3;
+		}
+		h2 {
+			margin: 0.75em 0;
+			border: 2px solid #999;
+			font-size: 1em;
+			font-weight: normal;
+		}
+		p {
+			margin: 0.75em auto;
+			border: 2px solid #999;
+		}
+		.block {
+			height: 3em;
+			border: 2px solid #000;
+			background-color: #ccc;
+			text-align: center;
+			line-height: 3em;
+		}
+		/* moved positioned boxes */
+		.topleft {
+			background: hsla(0,0%,70%,0.65); /* faking #ccc; */
+			top: -1em;
+			left: -1em;
+		}
+		.static {
+			position: static; /* default */
+		}
+		.relative-wrapper {
+			position: relative;
+		}
+		.right .fake-relative {
+			position: absolute;
+			width: 100%;
+		}
+		.relative {
+			position: relative;
+		}
+		.absolute {
+			position: absolute;
+		}
+		.fixed {
+			position: absolute; /*fixed = absolute relative to viewport, and .wrapper is faking viewport */
+		}
+		h2 {
+			border: none;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 6 — Positioning schemes</h1>
+<div>Some of these examples are faked a little bit to illustrate things better. The positioned box in the right example of each pair also has the styles <code>top: -1em; left: -1em;</code>, and is slightly transparent to more easily see what’s going on.</div>
+
+<section class="two-up">
+<h2><code>position: static;</code></h2>
+<div class="wrapper left">
+<div class="body">
+<p>Text before a block with <code>position: static;</code>.</p>
+<div class="static block"><code>position: static;</code></div>
+<p>This is the default positioning scheme.</p>
+</div>
+</div>
+<div class="wrapper right">
+<div class="body">
+<p>Static blocks are laid out in the <em>“normal flow”</em>.</p>
+<div class="static block topleft"><code>position: static;</code></div>
+<p>Positioning with <code>top</code>, <code>left</code> etc. has no effect.</p>
+</div>
+</div>
+</section>
+
+<section class="two-up">
+<h2><code>position: relative;</code></h2>
+<div class="wrapper left">
+<div class="body">
+<p>Relative blocks are like static blocks.</p>
+<div class="relative block"><code>position: relative;</code></div>
+<p>They create a <em>containing block</em> for positioned and floated children.</p>
+</div>
+</div>
+<div class="wrapper right">
+<div class="body">
+<p>They take up space in the normal flow.</p>
+<!-- faking positioned relative  -->
+<div class="relative-wrapper">
+<div class="block fade"><code>position: relative;</code></div>
+<div class="fake-relative block topleft"><code>position: relative;</code></div>
+</div>
+<p>But they can be moved from their static position with <code>top</code>, <code>left</code>, etc.</p>
+</div>
+</div>
+</section>
+
+<section class="two-up">
+<h2><code>position: absolute;</code></h2>
+<div class="wrapper left">
+<div class="body">
+<p>Absolute blocks are removed from the flow.</p>
+<div class="absolute block"><code>position: absolute;</code></div>
+<p>They are positioned relative to their containing block.</p>
+</div>
+</div>
+<div class="wrapper right">
+<div class="body relative-wrapper">
+<p>They overlap other elements.</p>
+<div class="absolute block topleft"><code>position: absolute;</code></div>
+<p>They are positioned relative to their containing block.</p>
+</div>
+</div>
+</section>
+
+<section class="two-up">
+<h2><code>position: fixed;</code></h2>
+<div class="wrapper left wrapper-fixed">
+<div class="body">
+<p>Fixed blocks are like absolute blocks.</p>
+<div class="fixed block"><code>position: fixed;</code></div>
+<p>For print styles they appear on each page.</p>
+</div>
+</div>
+<div class="wrapper right">
+<div class="body">
+<p>But they’re positioned relative to the viewport.</p>
+<div class="fixed block topleft"><code>position: fixed;</code></div>
+<p>For print styles they appear on each page.</p>
+</div>
+</div>
+</section>
+
+<hr>
+
+<ul>
+	<li><a href="http://www.w3.org/TR/CSS2/visuren.html#positioning-scheme" title="Visual formatting model">Positioning schemes</a> (CSS 2.1)</li>
+	<li><a href="http://dabblet.com/gist/3887799" title="dabblet.com">This example on Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

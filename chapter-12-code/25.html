@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Example 25 — animation-direction (Figure 12-30)</title>
+<style>
+/* Example 25 — animation-direction (Figure 12-30) */
+/* From Beginning HTML5 and CSS3 — The Web Evolved http://thewebevolved.com/ */
+body {
+	width: 80%;
+	max-width: 42em;
+	margin: auto;
+	font: 1em/1.5 Georgia, serif;
+}
+h1 {
+	font-weight: normal;
+}
+hr,
+footer {
+	margin: 2.5em 0;
+}
+pre {
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+}
+pre,
+code,
+samp,
+var {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+figcaption {
+	clear: left;
+	padding-top: 1.5em;
+	margin-top: 10.64em;
+}
+
+.relative {position: relative;}
+.box {
+  position: absolute;
+  width: 20%;
+  margin: 0 0 .5em;
+  border: 3px solid #000;
+  border-radius: .5em;
+  padding: .33em;
+  background: #fff;
+  text-align: center;
+}
+.two-five {top: 2.66em;}
+.infinite {top: 5.32em;}
+/* Opera rules are for checking support when they implement */
+figure:hover .box {
+  -webkit-animation-name: moveit;
+     -moz-animation-name: moveit;
+      -ms-animation-name: moveit;
+       -o-animation-name: moveit;
+  -webkit-animation-duration: 1.5s;
+     -moz-animation-duration: 1.5s;
+      -ms-animation-duration: 1.5s;
+       -o-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+     -moz-animation-direction: alternate;
+      -ms-animation-direction: alternate;
+       -o-animation-direction: alternate;
+}
+figure:hover .two-five {
+  -webkit-animation-iteration-count: 2.5;
+     -moz-animation-iteration-count: 2.5;
+      -ms-animation-iteration-count: 2.5;
+       -o-animation-iteration-count: 2.5;
+}
+figure:hover .infinite {
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+}
+@-webkit-keyframes moveit {
+  to {left: 100%;}
+}
+@-moz-keyframes moveit {
+  to {left: 100%;}
+}
+@-ms-keyframes moveit {
+  to {left: 100%;}
+}
+@-o-keyframes moveit {
+  to {left: 100%;}
+}
+</style>
+</head>
+<body>
+<h1>Example 25 — animation-direction (Figure 12-30)</h1>
+
+<p>Building on <a href="24.html">Example 24</a>…</p>
+<figure id="a-direction">
+<pre class="callout"><code>:hover .box {
+  …
+  animation-direction: alternate;
+}
+</code></pre>
+<div class="relative">
+<div class="box">count: 1</div>
+<div class="box two-five">count: 2.5</div>
+<div class="box infinite">infinite</div>
+</div>
+<figcaption><code>animation-direction: alternate;</code> changes animations with an <code>animation-iteration-count</code> greater than <code>2</code> to reverse their direction on even counts</figcaption>
+</figure>
+
+<hr />
+
+<ul>
+	<li><a href="http://dev.w3.org/csswg/css3-animations/#animation-direction-property" title="CSS Animations">CSS Animations — The ‘animation-direction’ Property</a></li>
+	<li><a href="http://dabblet.com/gist/4187815" title="dabblet.com">This example on Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 12</footer>
+
+</body>
+</html>

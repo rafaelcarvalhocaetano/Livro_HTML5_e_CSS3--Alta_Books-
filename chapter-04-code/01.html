@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 1 — The i element</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		figure {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		h1 {
+			font-weight: normal;
+		}
+		.script li {
+			margin-left: 4em;
+			text-indent: -4em;
+		}
+		.script b {
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		.script .action {
+			margin: .75em 0;
+			text-align: center;
+			text-indent: 0;
+			font-weight: bold;
+			font-style: italic;
+		}
+		.script .voiceover {
+			font-style: italic;
+		}
+		.semantic-list {
+			list-style-type: none;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 1 - The <code>i</code> element (Figures 4.1-4.3)</h1>
+
+<figure id="deckard">
+	<blockquote cite="http://www.trussel.com/bladerun.htm">
+		<ol class="script semantic-list">
+			<li><b class="character">Deckard</b>: Move! Get out of the way!</li>
+			<li class="action">Deckard fires. Kills Zhora in dramatic slow motion scene.</li>
+			<li><b class="character">Deckard</b>: <i class="voiceover">The report would be routine retirement of a replicant which didn't make me feel any better about shooting a woman in the back. There it was again. Feeling, in myself. For her, for Rachael.</i></li>
+			<li><b class="character">Deckard</b>: Deckard. B-263-54.</li>
+		</ol>
+	</blockquote>
+	<figcaption>Using <code>&lt;i class="voiceover"&gt;</code> to indicate a voiceover (alternate mood)</figcaption>
+</figure>
+
+<hr>
+
+<figure id="japanese">
+	<blockquote>
+		<p>We ate <i lang="ja-latn" title="eel">unagi</i>, <i lang="ja-latn" title="seared salmon">aburi-zake</i>, and <i lang="ja-latn" title="octopus">tako</i> sushi last night, but the <i lang="ja-latn" title="fatty bluefin tuna belly—LET’S EAT IT ALL!">toro</i> was all fished out.</p>
+	</blockquote>
+	<figcaption>Using <code>&lt;i lang="ja-latn"&gt;</code> to indicate “an idiomatic phrase from another language” (or, Japanese). To check character sets for <code>lang=""</code> values you can use the <a href="http://www.iana.org/assignments/character-sets" title="IANA, monospace-ing like it’s 1989">IANA’s official list of character sets</a> (ouch), or the excellent <a href="http://rishida.net/utils/subtags/" title="ishida &gt;&gt; utilities: Language subtag registry search">Language Subtag Lookup tool by Richard Ishida, W3C</a>.</figcaption>
+</figure>
+
+<hr>
+
+<figure id="nanotyrannus">
+	<blockquote cite="http://en.wikipedia.org/wiki/Nanotyrannus">
+		<p><i class="taxonomy">Nanotyrannus</i> ("dwarf tyrant") is a genus of tyrannosaurid dinosaur, and is possibly a juvenile specimen of <i class="taxonomy">Tyrannosaurus</i>. It is based on CMN 7541, a skull collected in 1942 and described by Charles W. Gilmore described in 1946, who gave it the new species <i class="taxonomy">Gorgosaurus lancensis</i>.</p>
+	</blockquote>
+	<figcaption>Using <code>&lt;i class="taxonomy"&gt;</code> for taxonomic names</figcaption>
+</figure>
+
+<hr>
+
+<ul>
+	<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-i-element" title="4.6 Text-level semantics — HTML Standard"><code>i</code></a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 3</footer>
+
+</body>
+</html>

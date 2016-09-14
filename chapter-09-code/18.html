@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 18 — The Flexible Box Layout Module</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1,
+		h2,
+		h3 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+		pre {
+			-moz-tab-size: 2;
+			-o-tab-size: 2;
+			tab-size: 2;
+		}
+		pre,
+		code,
+		samp,
+		var {
+			word-wrap: break-word;
+			white-space: pre-wrap;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 18 — The Flexible Box Layout Module (new flexbox)</h1>
+
+<h2>Figure 9-39: Flex presets code sample</h2>
+
+<pre><code>&lt;style scoped&gt;
+.nav {
+	/* Establish a flex container */
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	margin: 0.25em auto 1.5em;
+	padding-left: 0;
+	list-style-type: none;
+}
+/* First image: Flexbox with no flex */
+.nav li {
+	/* equivalent to flex: 0 0 auto; */
+	-webkit-flex: none;
+	-moz-flex: none;
+	flex: none;
+}
+/* Second image: Relative flex */
+.nav li {
+	/* equivalent to flex: 1 1 auto; */
+	-webkit-flex: auto;
+	-moz-flex: auto;
+	flex: auto;
+}
+/* Third image: Absolute flex */
+.nav li {
+	/* equivalent to flex: 1 1 0px; */
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+/* Fourth image: Differing flex values */
+.nav li {
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+.nav li:nth-child(2) {
+	/* equivalent to flex: 2 1 0px; */
+	-webkit-flex: 2;
+	-moz-flex: 2;
+	flex: 2;
+}
+/* Increase click target area */
+.nav a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0.25em 0;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+	color: hsl(220, 100%, 0%);
+}
+.nav li {
+	margin: 0 0.5%;
+	border: 1px solid #999;
+	border-radius: 2px;
+	text-align: center;
+	background-color: #eee;
+}
+&lt;/style&gt;
+&lt;ul class="nav"&gt;
+  &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/articles"&gt;Space Monkey Articles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/dashboard"&gt;Log in&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+<style scoped>
+.nav {
+	/* Establish a flex container */
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	padding-left: 0;
+	list-style-type: none;
+}
+/* First image: Flexbox with no flex */
+.nav1 li {
+	/* equivalent to flex: 0 0 auto; */
+	-webkit-flex: none;
+	-moz-flex: none;
+	flex: none;
+}
+/* Second image: Relative flex */
+.nav2 li {
+	/* equivalent to flex: 1 1 auto; */
+	-webkit-flex: auto;
+	-moz-flex: auto;
+	flex: auto;
+}
+/* Third image: Absolute flex */
+.nav3 li {
+	/* equivalent to flex: 1 1 0px; */
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+/* Fourth image: Differing flex values */
+.nav4 li {
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+.nav4 li:nth-child(2) {
+	/* equivalent to flex: 2 1 0px; */
+	-webkit-flex: 2;
+	-moz-flex: 2;
+	flex: 2;
+}
+/* Increase click target area */
+.nav a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0.25em 0;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+	color: hsl(220, 100%, 0%);
+}
+/* make things easier to see */
+.nav li {
+	margin: 0 0.5%;
+	border: 1px solid #999;
+	border-radius: 2px;
+	text-align: center;
+	background-color: #eee;
+}
+</style>
+
+<h2>Figure 9-39: <code>flex</code> presets (relative vs absolute flex)</h2>
+<h3><code>flex: initial</code></h3>
+<ul class="nav flex initial">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<!--<h3><code>flex: none</code></h3>
+<ul class="nav flex none">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>-->
+
+<h3><code>flex: auto</code></h3>
+<ul class="nav flex auto">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: &lt;positive-number&gt;</code></h3>
+<ul class="nav flex positive">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: &lt;positive-number&gt; (1 1 2)</code></h3>
+<ul class="nav flex positive2">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: auto</code></h3>
+<ul class="nav width auto">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: &lt;positive-number&gt;</code></h3>
+<ul class="nav width positive#">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<hr>
+
+<style scoped>
+.auto-flex .nav-login {
+	-webkit-flex: 2;
+	-moz-flex: 2;
+	flex: 2; /* twice as wide as other flex items */
+}
+.fixed-width li {
+	-webkit-flex: 1 1 0;
+	-moz-flex: 1 1 0;
+	flex: 1 1 0;
+	width: 8em;
+	margin: 0 0.5%;
+	text-align: center;
+}
+/*.fixed-width li:nth-child(3), .fixed-width li:nth-child(1) {
+	margin-left: auto;
+	margin-right: auto;
+}
+*/
+.flex li {
+	width: auto;
+}
+.width li {
+	width: 8em;
+}
+/*.flex li:nth-child(2) {
+	width: 10em;
+}
+.flex li:nth-child(4) {
+	width: 5em;
+}*/
+.initial li {
+	-webkit-flex: 0 1 auto;
+	-moz-flex: 0 1 auto;
+	flex: 0 1 auto;
+}
+.auto-margins1 li:nth-child(3) {
+	margin-left: auto;
+}
+.auto-margins2 li:nth-child(2) {
+	margin-left: auto;
+	margin-right: auto;
+}
+.auto-margins3 li {
+	margin-left: auto;
+	margin-right: auto;
+}
+.auto-margins4 li:last-child {
+	margin-left: auto;
+	margin-right: auto;
+}
+.none li {
+	-webkit-flex: none;
+	-moz-flex: none;
+	flex: none;
+}
+.auto li {
+	-webkit-flex: auto;
+	-moz-flex: auto;
+	flex: auto;
+}
+.positive li {
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+.positive2 li {
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+.positive2 li:nth-child(2) {
+	-webkit-flex: 2;
+	-moz-flex: 2;
+	flex: 2;
+}
+.jc li {
+	-webkit-flex: none;
+	-moz-flex: none;
+	flex: none;
+}
+.justify-content1 {
+	-webkit-justify-content: flex-start;
+	-moz-justify-content: flex-start;
+	justify-content: flex-start;
+}
+.justify-content2 {
+	-webkit-justify-content: flex-end;
+	-moz-justify-content: flex-end;
+	justify-content: flex-end;
+}
+.justify-content3 {
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+}
+.justify-content4 {
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	justify-content: space-between;
+}
+.justify-content5 {
+	-webkit-justify-content: space-around;
+	-moz-justify-content: space-around;
+	justify-content: space-around;
+}
+
+</style>
+<h2>Figure 9-40: Aligning via auto-margins</h2>
+
+<h3><code>flex: initial</code></h3>
+<ul class="nav flex initial">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: initial</code> with auto margins 1</h3>
+<ul class="nav flex initial auto-margins1">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: initial</code> with auto margins 2</h3>
+<ul class="nav flex initial auto-margins2">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: initial</code> with auto margins 3</h3>
+<ul class="nav flex initial auto-margins3">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>flex: initial</code> with auto margins 4</h3>
+<ul class="nav flex initial auto-margins4">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<hr>
+
+<h2>Figure 9-41: Axis alignment with <code>justify-content</code></h2>
+
+<h3><code>justify-content: flex-start</code></h3>
+<ul class="nav jc justify-content1">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>justify-content: flex-end</code></h3>
+<ul class="nav jc justify-content2">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>justify-content: center</code></h3>
+<ul class="nav jc justify-content3">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>justify-content: space-between</code></h3>
+<ul class="nav jc justify-content4">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+
+<h3><code>justify-content: space-around</code></h3>
+<ul class="nav jc justify-content5">
+  <li><a href="/">Home</a></li>
+  <li><a href="/articles">Space Monkey Articles</a></li>
+  <li><a href="/dashboard">Log in</a></li>
+</ul>
+</div>
+
+<hr>
+
+<div class="figure9-42">
+<style scoped>
+/* Flexbox align-items values */
+/* flex-start, flex-end, center, baseline, stretch, auto */
+.figure9-42 * {
+	box-sizing: border-box;
+}
+img {
+	display: block;
+	margin: auto;
+}
+.wrapper {
+	overflow: hidden;
+	margin: 3em auto;
+	width: 29.5em;
+	/* relative for .fixed */
+	position: relative;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	border: 2px solid #999;
+	padding: 0.75em;
+	font-size: 1.5em;
+}
+.box {
+	/* short for flex: 1 1 0px; */
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+	border: 2px solid #ccc;
+	padding: 0 0.5em;
+}
+.default {
+	display: block;
+}
+.default div {
+	border: 2px solid #ccc;
+	padding: 0 0.5em;
+}
+.figure9-42 h2 {
+	margin: 0.75em 0 0.5em;
+	font-size: 1.5em;
+	font-weight: normal;
+	text-align: center;
+}
+.figure9-42 p {
+	margin: 0.75em auto;
+}
+img + p {
+	font-size: 0.825em;
+	font-style: italic;
+	text-align: center;
+}
+.flex-start {
+	-webkit-align-items: flex-start;
+	-moz-align-items: flex-start;
+	align-items: flex-start;
+}
+.flex-end {
+	-webkit-align-items: flex-end;
+	-moz-align-items: flex-end;
+	align-items: flex-end;
+}
+.center {
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+}
+.baseline {
+	-webkit-align-items: baseline;
+	-moz-align-items: baseline;
+	align-items: baseline;
+}
+.stretch {
+	-webkit-align-items: stretch;
+	-moz-align-items: stretch;
+	align-items: stretch;
+}
+.auto {
+	-webkit-align-items: auto;
+	-moz-align-items: auto;
+	align-items: auto;
+}
+</style>
+<h2>Figure 9-42: Applying <code>align-items</code> values to the flex container</h2>
+
+<div class="wrapper default">
+	<div>
+		<p>On January 31, 1961, Ham was secured in a Project Mercury mission labeled MR-2 and launched from Cape Canaveral, Florida, on a suborbital flight.</p>
+	</div>
+	<div>
+		<h2>Rocket launch</h2>
+		<img src="img/rocket.jpg" width="156" height="200">
+		<p>Mercury Redstone 2 launch</p>
+	</div>
+	<div>
+		<h2>After returning</h2>
+		<img src="img/apple.jpg" width="200" height="157">
+		<p>Ham accepts an apple post-flight</p>
+	</div>
+</div>
+
+<div class="wrapper stretch">
+	<div class="box">
+		<p>On January 31, 1961, Ham was secured in a Project Mercury mission labeled MR-2 and launched from Cape Canaveral, Florida, on a suborbital flight.</p>
+	</div>
+	<div class="box">
+		<h2>Rocket launch</h2>
+		<img src="img/rocket.jpg" width="156" height="200">
+		<p>Mercury Redstone 2 launch</p>
+	</div>
+	<div class="box">
+		<h2>After returning</h2>
+		<img src="img/apple.jpg" width="200" height="157">
+		<p>Ham accepts an apple post-flight</p>
+	</div>
+</div>
+
+<div class="wrapper flex-start">
+	<div class="box">
+		<p>On January 31, 1961, Ham was secured in a Project Mercury mission labeled MR-2 and launched from Cape Canaveral, Florida, on a suborbital flight.</p>
+	</div>
+	<div class="box">
+		<h2>Rocket launch</h2>
+		<img src="img/rocket.jpg" width="156" height="200">
+		<p>Mercury Redstone 2 launch</p>
+	</div>
+	<div class="box">
+		<h2>After returning</h2>
+		<img src="img/apple.jpg" width="200" height="157">
+		<p>Ham accepts an apple post-flight</p>
+	</div>
+</div>
+
+<div class="wrapper flex-end">
+	<div class="box">
+		<p>On January 31, 1961, Ham was secured in a Project Mercury mission labeled MR-2 and launched from Cape Canaveral, Florida, on a suborbital flight.</p>
+	</div>
+	<div class="box">
+		<h2>Rocket launch</h2>
+		<img src="img/rocket.jpg" width="156" height="200">
+		<p>Mercury Redstone 2 launch</p>
+	</div>
+	<div class="box">
+		<h2>After returning</h2>
+		<img src="img/apple.jpg" width="200" height="157">
+		<p>Ham accepts an apple post-flight</p>
+	</div>
+</div>
+
+<div class="wrapper center">
+	<div class="box">
+		<p>On January 31, 1961, Ham was secured in a Project Mercury mission labeled MR-2 and launched from Cape Canaveral, Florida, on a suborbital flight.</p>
+	</div>
+	<div class="box">
+		<h2>Rocket launch</h2>
+		<img src="img/rocket.jpg" width="156" height="200">
+		<p>Mercury Redstone 2 launch</p>
+	</div>
+	<div class="box">
+		<h2>After returning</h2>
+		<img src="img/apple.jpg" width="200" height="157">
+		<p>Ham accepts an apple post-flight</p>
+	</div>
+</div>
+
+<div class="wrapper baseline">
+	<div class="box">
+		<p>On January 31, 1961, Ham was secured in a Project Mercury mission labeled MR-2 and launched from Cape Canaveral, Florida, on a suborbital flight.</p>
+	</div>
+	<div class="box">
+		<h2>Rocket launch</h2>
+		<img src="img/rocket.jpg" width="156" height="200">
+		<p>Mercury Redstone 2 launch</p>
+	</div>
+	<div class="box">
+		<h2>After returning</h2>
+		<img src="img/apple.jpg" width="200" height="157">
+		<p>Ham accepts an apple post-flight</p>
+	</div>
+</div>
+
+<!-- /.figure9-42 --></div>
+
+<ul>
+	<li>The Flexible Box Layout Module</li>
+	<li><a href="http://dabblet.com/gist/3953976" title="dabblet.com">Figure 9-39 to 9-41 on Dabblet</a></li>
+	<li><a href="http://dabblet.com/gist/3976133" title="dabblet.com">Figure 9-42 on Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

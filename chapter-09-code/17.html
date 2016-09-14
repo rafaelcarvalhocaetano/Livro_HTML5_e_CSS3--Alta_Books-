@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 17 — CSS Generated Content for Paged Media Module</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1,
+		h2 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+		pre {
+			-moz-tab-size: 2;
+			-o-tab-size: 2;
+			tab-size: 2;
+		}
+		pre,
+		code,
+		samp,
+		var {
+			word-wrap: break-word;
+			white-space: pre-wrap;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 17 — CSS Generated Content for Paged Media Module</h1>
+
+<h2>Adding chapter number and title-based running headers</h2>
+<pre><code>h1 {
+	string-set: chapter-title content-element;
+	counter-increment: chapter;
+}
+title {
+	string-set: book-title contents;
+}
+@page :left {
+	@top-center {
+		content: string(book-title);
+	}
+}
+@page :right {
+	@top-center {
+		content: "Chapter " counter(chapter) ": " string(chapter-title);
+	}
+}</code></pre>
+
+<hr>
+
+<h2>A paged user interface</h2>
+
+<pre><code>@media paged {
+	html {
+		height: 100%;
+		overflow: paged-x-controls;
+	}
+}</code></pre>
+<ul>
+	<li><a href="http://dev.w3.org/csswg/css3-gcpm/" title="CSS Generated Content for Paged Media Module">CSS Generated Content for Paged Media Module</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

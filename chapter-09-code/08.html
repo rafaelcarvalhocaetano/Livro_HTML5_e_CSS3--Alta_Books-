@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 8 — Floats for layout</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+		pre {
+			-moz-tab-size: 2;
+			-o-tab-size: 2;
+			tab-size: 2;
+		}
+		pre,
+		code,
+		samp,
+		var {
+			word-wrap: break-word;
+			white-space: pre-wrap;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 8 — Floats for layout</h1>
+
+<pre><code>&lt;style scoped&gt;
+	div {
+		border: 1px solid #666;
+		padding: 0.5em;
+		background-color: #ddd;
+	}
+	.main {…}
+	.secondary {…}
+	.tertiary {…}
+&lt;/style&gt;
+&lt;div class="main"&gt;…&lt;/div&gt;
+&lt;div class="secondary"&gt;…&lt;/div&gt;
+&lt;div class="tertiary"&gt;…&lt;/div&gt;</code></pre>
+
+<hr>
+
+<section class="neg-margins">
+<style scoped>
+/* Reordering floats using negative margins */
+h2 {
+	font-weight: normal;
+}
+h3 {
+	margin: 1.5em 0 0.25em;
+	font-size: 1em;
+	font-family: "helvetica neue", arial, sans-serif;
+}
+h2:first-child {margin-top: 3em;}
+.wrapper {
+	overflow: auto;
+}
+.wrapper div {
+	float: left;
+	box-sizing: border-box;
+	border: 1px solid #666;
+	padding: 0.5em;
+	background-color: #ddd;
+}
+.content {width: 50%;}
+.nav {width: 20%;}
+.sidebar {width: 30%;}
+
+/* nav - content - sidebar */
+.layout1 .content {margin-left: 20%;} /* space for nav */
+.layout1 .nav {margin-left: -70%;} /* 50% + 20% */
+
+/* sidebar - content - nav */
+.layout2 .content {margin-left: 30%;} /* space for sidebar */
+.layout2 .sidebar {margin-left: -100%;} /* (50% + 30%) + 20% */
+
+/* content - nav - sidebar */
+/* This is easy as it’s the source order — floating alone is enough! */
+
+/* nav - sidebar - content */
+/* Not necessarily a good layout, but to show how it’s done */
+.layout4 .content {margin-left: 50%;} /* space for nav + sidebar */
+.layout4 .nav {margin-left: -100%;} /* (50% + 50%) */
+.layout4 .sidebar {margin-left: -80%;} /* 50% + 30% */
+
+/* Same again with inline-block */
+.inline, p {
+	margin: 0;
+}
+.inline span {
+	display: inline-block;
+	vertical-align: top;
+	outline: 1px solid #666;
+	background-color: #ddd;
+	padding: 0.5em 0;
+}
+/* nav - content - sidebar */
+.inline1 .content {margin-left: 20%;}
+.inline1 .nav {margin-left: -70%;}
+.inline1 .sidebar {margin-left: 50%;}
+
+/* sidebar - content - nav */
+.inline2 .content {margin-left: 30%;}
+.inline2 .sidebar {margin-left: -100%;}
+
+/* nav - sidebar - content */
+/* Again, to show how it’s done */
+.inline4 .content {margin-left: 50%;}
+.inline4 .nav {margin-left: -100%;}
+.inline4 .sidebar {margin-left: 0%;}
+</style>
+<h2>Using negative margins to rearrange floats (Figure 9-24)</h2>
+
+<div class="wrapper layout1">
+		<h3>nav - content - sidebar</h3>
+	<div class="content">Main content</div>
+	<div class="nav">Navigation</div>
+	<div class="sidebar">Secondary content</div>
+</div>
+
+<div class="wrapper layout2">
+	<h3>sidebar - content - nav</h3>
+	<div class="content">Main content</div>
+	<div class="nav">Navigation</div>
+	<div class="sidebar">Secondary content</div>
+</div>
+
+<div class="wrapper layout3">
+	<h3>content - nav - sidebar</h3>
+	<div class="content">Main content</div>
+	<div class="nav">Navigation</div>
+	<div class="sidebar">Secondary content</div>
+</div>
+
+<div class="wrapper layout4">
+	<h3>nav - sidebar - content</h3>
+	<div class="content">Main content</div>
+	<div class="nav">Navigation</div>
+	<div class="sidebar">Secondary content</div>
+</div>
+
+<!-- /.neg-margins --></section>
+
+<hr>
+
+<ul>
+	<li><a href="http://www.w3.org/TR/CSS2/box.html#margin-properties" title="Box model">Margin properties</a> (CSS 2.1)</li>
+	<li><a href="http://dabblet.com/gist/3897284" title="dabblet.com">This example in Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="UTF-8">
+	<title>2.11 Example, putting it all together</title>
+<link rel="stylesheet" href="../includes/main.css" charset="utf-8" />
+<!-- extra styles here or added via targeting ids with <style scoped>  -->
+<style type="text/css" media="screen">
+
+a {
+	color:blue !important;
+}
+
+a[href^="http://"] {
+	background:url(img/external.png) right center no-repeat;
+	padding-right:15px;
+}
+
+a[href^="http://thewebevolved.com"], a[href^="http://thewebevolved.com"] {
+	background:none;
+	padding-right:0;
+}
+
+a[href$=".pdf"] {
+	background:url(img/pdf.png) right center no-repeat;
+	padding-right:18px;
+}
+
+a[href*="twitter"] {
+	background:url(img/twitter.png) right center no-repeat;
+	padding-right:20px;
+}
+
+a[rel*="sweetheart"] {
+	background:url(img/sweetheart.png) right center no-repeat;
+	padding-right:20px;
+}
+
+abbr:not([title]) {
+	outline:2px dotted red;
+}
+
+/* section:target, div:target {
+	background: #F9FDA2;
+	padding:0.25em 2em;
+}*/
+
+*:target {
+	background: #F9FDA2;
+	padding:0.25em 2em;
+}
+
+form {
+	position:relative;
+}
+
+fieldset {
+	border:1px solid #666;
+	padding:1em;
+	display:inline-block;
+}
+
+label, input {
+	display:block;
+}
+
+input {
+	margin-bottom:10px;
+	width:180px;
+}
+
+label[for="rememberme"] {
+	font-size:10px;
+}
+
+input[type="checkbox"] {
+	display:inline;
+	width:auto;
+	padding-top:3px;
+}
+
+input[type="submit"] {
+	margin:20px 0 50px 0;
+}
+
+input[type="submit"] {
+	font-size:18px;
+	width:auto;
+	padding:0.5em 2em;
+	color:#fff;
+	background:orange;
+	background:rgb(240,120,14);
+	border:1px solid hsla(20,100%,50%,0.7);
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-moz-box-shadow:1px 2px 3px rgba(0,0,0,0.5), inset 0px 1px 1px rgba(255,255,255,0.5);
+    -webkit-box-shadow:1px 2px 3px rgba(0,0,0,0.5), inset 0px 1px 1px rgba(255,255,255,0.5);	
+	box-shadow:1px 2px 3px rgba(0,0,0,0.5), inset 0px 1px 1px rgba(255,255,255,0.5);
+
+	text-shadow: -1px 0 0 rgba(0,0,0,0.3), 0 -1px 0 rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(250,151,3,0.5);
+	
+	
+	background:-moz-linear-gradient( center bottom,rgb(240,120,14) 50%,rgb(250,151,3) 90%)	;
+	background:-webkit-gradient( linear, left bottom, left top, color-stop(0.5, rgb(240,120,14)), color-stop(0.9, rgb(250,151,3)));	
+	
+}
+
+
+input[type="submit"]:hover {
+	position:relative;
+	top:1px;
+	cursor:pointer;	
+		
+	-moz-box-shadow:1px 1px 2px rgba(0,0,0,0.5), inset 0px 1px 1px rgba(255,255,255,0.2);
+	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5), inset 0px 1px 1px rgba(255,255,255,0.2);
+	box-shadow:1px 1px 2px rgba(0,0,0,0.5), inset 0px 1px 1px rgba(255,255,255,0.2);
+	
+	text-shadow: -1px 0 0 rgba(0,0,0,0.3), 0 1px 0 rgba(0,0,0,0.3), 0 0 0 rgba(255,255,255,0.5), -1px 1px 0 rgba(250,151,3,0.5);
+	
+	background:rgb(250,151,3);
+	background:-moz-linear-gradient(center bottom, rgb(250,151,3) 50%, rgb(240,120,14) 90%,);
+	background:-webkit-gradient( linear, left bottom, left top, color-stop(0.5, rgb(250,151,3)), color-stop(0.9, rgb(240,120,14)));	
+}
+
+
+/*input:enabled {
+	border:1px solid #75aadb;
+}*/
+
+
+
+input[type="checkbox"]:checked + label {
+	display:inline;
+	background: #F9FDA2;
+}
+
+input:disabled {
+	background:#999;
+}
+
+
+
+</style>	
+</head>
+<body>
+
+<header>
+	<hgroup>
+		<h1>The Original Space Pioneers</h1>
+		<h2>America's Unsung Heroes</h2>
+	</hgroup>
+	<!--
+	Do we want to include a <nav> element in this example? Or would this overcomplicate things as we're still working on the single page that was introduced in Chapter 1?
+	
+	Is it perhaps enough to stick with the rest of the semantic elements, so users get a feel for added semantics on a single page?
+	-->
+</header>
+
+<article>
+	<hgroup>
+		<h1>Miss Baker</h1>
+		<h2>First Lady of Space</h2>
+	</hgroup>
+	
+	<nav>
+		<ol>
+			<li><a href="#introduction">Introduction</a></li>
+			<li><a href="#flight">Flight</a></li>
+			<li><a href="#mission">Mission</a></li>
+			<li><a href="#retirement">Retirement</a></li>
+		</ol>
+	</nav>
+
+	<div id="introduction">
+		<!-- This <div> is here to show that we can still use <div> elements and they haven't been replaced lock, stock and barrell by the new semantic elements (a misunderstanding we keep running into in workshops). We can use this <div> down the line to style the opening paragraph differently. -->
+		<p>Before humans were launched into space, <a href="http://en.wikipedia.org/wiki/Animals_in_space">many animals were propelled heavenwards</a> to pave the way for mankind's pioneering endeavours. These original pioneers, including <a href="http://thewebevolved.com/monkeys">numerous monkeys</a>, served their nations in order to investigate the biological effects of space travel.</p>
+		
+		<p>Perhaps the most famous animal astronaut is <a href="http://en.wikipedia.org/wiki/Laika">Laika</a>, the Soviet space dog who made her historic flight on November 3, 1957. The United States preferred to use monkeys for its missions and launched numerous monkey flights primarily between 1948 and 1961 paving the way for manned missions.</p>
+		
+		<p>Thirty-two monkeys flew in the space program; each had only one mission. Numerous back-up monkeys also went through the programs but never flew. Monkeys from several species were used, including rhesus monkeys, cynomolgus monkeys, and squirrel monkeys, as well as pig-tailed macaques.</p>
+	</div>
+
+
+	<form action="">
+	<fieldset>
+		<legend>Login</legend>
+		
+		<label for="uname">Username
+		<input type="text" id="uname" placeholder="e.g. hello@webevolved.com">
+		</label>
+		
+		<label for="password">Password
+		<input type="password" id="password">
+		</label>
+		
+		<input type="checkbox" id="rememberme" checked>
+		<label for="rememberme">Remember me</label>
+		
+		<input type="submit" value="Login" id="login" name="login" >
+		
+	</fieldset>
+	</form>
+
+
+
+	<!-- This is included to show we can have more than one footer on a page. -->
+	<footer>
+		<p><small>Copyright <time datetime="2010-07-14" pubdate="pubdate">2010</time> &middot; Christopher Murphy</small></p>
+	</footer>
+</article>
+
+<footer>
+	<p><small>The Space Pioneers web site is an example site, designed to accompany  <a href="http://www.thewebevolved.com">The Web Evolved</a>, published by Apress. Text: The Web Evolved; Design:Jonny Campbell.</small></p>
+	<p><small>HTML + CSS released under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license" title="Share, Remix, Attribute">Creative Commons Attribution 3.0 license</a>.</small></p>
+	<p><small>Photography &copy; <a href="http://www.istockphoto.com" title="Purchase royalty free stock photos at iStockphoto.com.">iStockphoto</a></small></p>
+</footer>
+
+	
+</body>
+</html>

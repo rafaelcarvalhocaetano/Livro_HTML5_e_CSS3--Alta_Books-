@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Example 5 — transform: rotate; (3D)</title>
+<style>
+/* transform: rotate; (3D) */
+/* From Beginning HTML5 and CSS3 — The Web Evolved http://thewebevolved.com/ */
+/* Comment out transition while editing CSS ;) */
+figure div {
+-webkit-transition: all 1s;
+   -moz-transition: all 1s;
+    -ms-transition: all 1s;
+     -o-transition: all 1s;
+        transition: all 1s;
+}
+
+body {
+	width: 80%;
+	max-width: 46em;
+	margin: auto;
+	font: 1em/1.5 Georgia, serif;
+}
+h1 {
+	font-weight: normal;
+}
+hr,
+footer {
+	margin: 2.5em 0;
+}
+pre {
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+}
+pre,
+code,
+samp,
+var {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+figure .container {
+  width: 105%;
+  height: 100px;
+  margin: 0 0 24px 0;
+  -webkit-perspective: 800px;
+     -moz-perspective: 800px;
+      -ms-perspective: 800px;
+       -o-perspective: 800px;
+          perspective: 800px;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  background-color: rgba(255,255,255,.7);
+  border: none;
+}
+figure div {
+  float: left;
+  width: 12%;
+  height: 50px;
+  margin: 25px 0 0 1.5%;
+  border: 3px solid #000;
+  border-radius: .5em;
+  background-color: #ddd;
+  text-align: center;
+}
+figure:hover .rotate {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+figure:hover .rotatex {
+  -webkit-transform: rotateX(180deg);
+     -moz-transform: rotateX(180deg);
+      -ms-transform: rotateX(180deg);
+       -o-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+figure:hover .rotatey {
+  -webkit-transform: rotatey(180deg);
+     -moz-transform: rotatey(180deg);
+      -ms-transform: rotatey(180deg);
+       -o-transform: rotatey(180deg);
+          transform: rotatey(180deg);
+}
+figure:hover .rotatez {
+  -webkit-transform: rotateZ(180deg);
+     -moz-transform: rotateZ(180deg);
+      -ms-transform: rotateZ(180deg);
+       -o-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+figure:hover .rotate3d-x {
+  -webkit-transform: rotate3d(1,0,0,180deg);
+     -moz-transform: rotate3d(1,0,0,180deg);
+      -ms-transform: rotate3d(1,0,0,180deg);
+       -o-transform: rotate3d(1,0,0,180deg);
+          transform: rotate3d(1,0,0,180deg);
+}
+figure:hover .rotate3d-y {
+  -webkit-transform: rotate3d(0,1,0,180deg);
+     -moz-transform: rotate3d(0,1,0,180deg);
+      -ms-transform: rotate3d(0,1,0,180deg);
+       -o-transform: rotate3d(0,1,0,180deg);
+          transform: rotate3d(0,1,0,180deg);
+}
+figure:hover .rotate3d-z {
+  -webkit-transform: rotate3d(0,0,1,180deg);
+     -moz-transform: rotate3d(0,0,1,180deg);
+      -ms-transform: rotate3d(0,0,1,180deg);
+       -o-transform: rotate3d(0,0,1,180deg);
+          transform: rotate3d(0,0,1,180deg);
+}
+figure .rotatex, figure .rotatey, figure .rotatez {background-color: #bcd;}
+figure .rotate3d-x, figure .rotate3d-y, figure .rotate3d-z {background-color: #9ab;}
+</style>
+</head>
+<body>
+<h1>Example 5 — transform: rotate in 3D (Figure 12-5)</h1>
+
+<figure id="rotate3d">
+<pre class="callout"><code>div {transition: all 1s;}
+figure:hover .rotate3d-x {transform: rotate3d(1,0,0,180deg);}
+figure:hover .rotate3d-y {transform: rotate3d(0,1,0,180deg);}
+figure:hover .rotate3d-z {transform: rotate3d(0,0,1,180deg);}
+figure:hover .rotatex {transform: rotateX(180deg);}
+figure:hover .rotatey {transform: rotateY(180deg);}
+figure:hover .rotatez {transform: rotateZ(180deg);}
+figure:hover .rotate {transform: rotate(180deg);} /* for comparison */
+</code></pre>
+<div class="container">
+<div class="rotate"><code>rotate</code></div>
+<div class="rotatex"><code>rotateX</code></div>
+<div class="rotatey"><code>rotateY</code></div>
+<div class="rotatez"><code>rotateZ</code></div>
+<div class="rotate3d-x"><code>rotate3D x</code></div>
+<div class="rotate3d-y"><code>rotate3D y</code></div>
+<div class="rotate3d-z"><code>rotate3D z</code></div>
+</div>
+<figcaption>The first box is standard <code>rotate()</code>. The next three boxes use the individual axis properties to rotate 180° around the X, Y and Z-axes. The last three boxes use <code>transform: rotate3d()</code> to do the same. Note that rotating around the Z-axis via <code>rotateZ(180deg)</code> or <code>rotate3D(0,0,1,180deg)</code> is effectively the same as <code>rotate(180deg)</code>.</figcaption>
+</figure>
+
+<hr />
+
+<ul>
+	<li><a href="http://dev.w3.org/csswg/css3-3d-transforms/#transform-functions" title="CSS 3D Transforms">CSS 3D Transforms Module Level 3 — Transformation Functions</a></li>
+	<li><a href="http://dabblet.com/gist/4182212" title="dabblet.com">This example on Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 12</footer>
+
+</body>
+</html>

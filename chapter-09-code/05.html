@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 5 — Anonymous boxes</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+		/* Representation of anonymous boxes */
+		div, p {
+		  line-height: 1.5em;
+		}
+		div {
+		  width: 14em;
+		  margin: 2em auto;
+		  border: 2px solid #666;
+		  font-size: 3em;
+		}
+		.a-block {
+		  display: block;
+		  border: 2px solid #999;
+		}
+		p, strong {
+		  border: 2px solid #666;
+		}
+		.a-inline {
+		  border: 2px solid #ccc;
+		}
+		div, p, strong, span {
+		  padding: 0.1em;
+		}
+		/* hiding border size increase for 2nd instance */
+		div {
+			line-height: 70px;
+		}
+		div {
+			margin: 46px auto;
+		}
+		.a-block {
+			margin: -2px 0;
+		}
+		p {
+			margin: 40px 0 48px;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 5 — Anonymous boxes (Figure 9-16)</h1>
+
+<div>
+  Some inline content
+  <p>An <strong>important</strong> block-level paragraph</p>
+</div>
+
+<div>
+  <span class="a-block">Some inline content</span>
+  <p><span class="a-inline">An </span><strong>important</strong><span class="a-inline"> block-level paragraph</span></p>
+</div>
+
+<hr>
+
+<ul>
+	<li><a href="http://www.w3.org/TR/CSS2/visuren.html#anonymous-block-level" title="Visual formatting model">Anonymous block-level boxes</a> (CSS 2.1)</li>
+	<li><a href="http://www.w3.org/TR/CSS2/visuren.html#anonymous" title="Visual formatting model">Anonymous inline boxes</a> (CSS 2.1)</li>
+	<li><a href="http://dabblet.com/gist/3884507" title="dabblet.com">This example in Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

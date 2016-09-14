@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=UTF-8>
+  <title>Google Web Font Loader Example | Web Evolved Chapter 10</title>    
+  <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+  <script>
+    WebFont.load({
+    google: {
+        families: ['Titan One:400']
+    }
+   });
+  </script>
+  
+  <style type='text/css'>
+    /* Hide fonts when the font loads */
+    .wf-loading h1 { visibility: hidden; } 
+
+    /* Render text if the webfonts have been loaded */
+    .wf-active h1 {
+      visibility: visible; 
+      font-family: 'Titan One', cursive; 
+    }
+
+    /* Render text if webfonts have not been loaded */
+    .wf-inactive h1 {
+      visibility: visible; 
+      font-family: monospace; 
+    }
+  </style>  
+</head>
+<body>
+  <h1 id="page-header">Google Webfont Loader</h1>
+</body>
+</html>
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Example 3 — Vertical margin collapsing</title>
+	<style>
+		body {
+			width: 60%;
+			max-width: 42em;
+			margin: auto;
+			font: 1em/1.5 Georgia, serif;
+		}
+		h1,
+		h2 {
+			font-weight: normal;
+		}
+		hr,
+		footer {
+			margin: 2.5em 0;
+		}
+		section {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<h1>Example 3 — Vertical margin collapsing (Figures 9-9 and 9-10)</h1>
+
+<section class="wrapper1">
+<style scoped>
+.wrapper1 p {
+	margin: 1.5em 0;
+}
+.wrapper1 ul {
+	margin: 1.5em 0 1.5em 1.5em;
+	padding: 0;
+}
+.wrapper1 li {
+	margin: 0.75em;
+}
+.wrapper1 p,
+.wrapper1 ul,
+.wrapper1 li {
+	background-color: hsla(0,0%,50%,.2);
+	outline: 1px solid hsla(0,0%,50%,.4);
+}
+</style>
+<h2>Figure 9-9</h2>
+<p>…</p>
+<ul>
+	<li>
+		<p>…</p>
+	</li>
+</ul>
+</section>
+
+<hr>
+
+<section class="wrapper1a">
+<style scoped>
+/* Showing margins with margin collapsing (faked with padding) */
+.wrapper1a div,
+.wrapper1a ul,
+.wrapper1a li {
+	margin: 0;
+	background-color: hsla(0,0%,50%,.2);
+	outline: 1px dashed hsla(0,0%,50%,.4);
+}
+.wrapper1a div {
+	padding: 1.5em 0;
+}
+.wrapper1a ul {
+	padding: 0 0 1.5em 1.5em;
+}
+.wrapper1a li {
+	padding: 0 0.75em;
+}
+.wrapper1a div div,
+.wrapper1a li div {
+	padding: 0;
+	outline: 1px solid hsla(0,0%,50%,.4);
+}
+</style>
+<h2>Figure 9-9 with visible margins (faked with padding)</h2>
+<div><div>…</div></div>
+<ul>
+	<li>
+		<div>…</div>
+	</li>
+</ul>
+</section>
+
+<hr>
+
+<section class="wrapper1b">
+<style scoped>
+/* Showing what would happen _without_ margin collapsing (faked with padding) */
+.wrapper1b div,
+.wrapper1b ul,
+.wrapper1b li {
+	margin: 0;
+	background-color: hsla(0,0%,50%,.2);
+	outline: 1px dashed hsla(0,0%,50%,.4);
+}
+.wrapper1b div {
+	padding: 1.5em 0;
+}
+.wrapper1b ul {
+	padding: 1.5em 0 1.5em 1.5em;
+}
+.wrapper1b li {
+	padding: 0.75em;
+}
+.wrapper1b div div,
+.wrapper1b li div {
+	padding: 0;
+	outline: 1px solid hsla(0,0%,50%,.4);
+}
+</style>
+<h2>How Figure 9-9 would look without margin collapsing (faked with padding)</h2>
+<div><div>…</div></div>
+<ul>
+	<li>
+		<div>…</div>
+	</li>
+</ul>
+</section>
+
+<hr>
+
+<div class="wrapper2a">
+<style scoped>
+.wrapper2a p {
+	margin: 1.5em 0;
+}
+.wrapper2a p {
+	background-color: hsla(0,0%,50%,.2);
+	outline: 1px solid hsla(0,0%,50%,.4);
+}
+</style>
+<h2>Figure 9-10 with margin collapsing (empty paragraphs completely collapse)</h2>
+<p>…</p>
+<!-- two empty paragraphs -->
+<p></p>
+<p></p>
+<p>…</p>
+</div>
+
+<hr>
+
+<div class="wrapper2b">
+<style scoped>
+.wrapper2b p {
+	margin: 1.5em 0;
+}
+.wrapper2b p {
+	background-color: hsla(0,0%,50%,.2);
+	outline: 1px solid hsla(0,0%,50%,.4);
+}
+/* preventing margin collapsing by stopping them touching */
+.wrapper2b p {
+	border-top: 1px solid #000;
+}
+</style>
+<h2>Figure 9-10 with <code>border-top</code></h2>
+<div>Adding <code>border-top</code> stops the margins touching, preventing margin collapsing and revealing the empty paragraphs.</div>
+<p>…</p>
+<!-- two empty paragraphs -->
+<p></p>
+<p></p>
+<p>…</p>
+</div>
+
+<hr>
+
+<ul>
+	<li><a href="http://www.w3.org/TR/CSS2/box.html#collapsing-margins" title="Box model">Collapsing margins</a> (CSS 2.1)</li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 9</footer>
+
+</body>
+</html>

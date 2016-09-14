@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=UTF-8>
+  <title>Vertical Rhythm with Ems | Web Evolved Chapter 10</title>    
+  <style type='text/css'>
+    body {
+      background-image: -o-linear-gradient(hsl(777, 70%, 50%) 1px, transparent 1px, transparent);
+      background-image: -moz-linear-gradient(hsl(777, 70%, 50%) 1px, transparent 1px, transparent);
+      background-image: -webkit-linear-gradient(hsl(777, 70%, 50%) 1px, transparent 1px, transparent);
+      background-image: -ms-linear-gradient(hsl(777, 70%, 50%) 1px, transparent 1px, transparent);
+      height: 100%;    
+
+      /* Set the pixel value of the computed value of the base unit of the rhythm */ 
+      background-size: 100% 24px; 
+      background-position: fixed;
+    }
+
+    /* gives us a base font-size of 16px, base line height of 24px on desktop browsers */
+    body { font-size: 100%; line-height: 1.5em; }
+
+    p {
+      /* vertical space above and below each paragraph totals to one line: 24px (0.75em = 12px)  */
+      margin: 0.75em 0;
+    }
+
+    p:first-child {
+      /* font-size is now 24px, line-height if not redeclared will be now 36px */
+      font-size: 1.5em;
+
+      /* line height is redeclared, now same as font size! 24px */
+      line-height: 1em;
+
+      /* vertical space above and below each paragraph totals to one line: 24px  */
+      margin: 1em 0;
+    }
+
+    p:last-child {
+      /* font size is now 12px, line height is redeclared and will be 2*12px = 24px  */
+      font-size: 0.75em;
+      line-height: 2em;
+
+      /* previous paragraph has margin bottom set to 12px, hence margin collapsing means we cannot set a smaller margin-top  for this selector.  We now need to allocate rest of the margin to the bottom margin (12px/7.2px = 1.667em) so in total with border-width it would be a multiple of the base unit */
+      margin: 1em 0 1em 0;
+
+      /* Padding top and bottom is 12px each, total = 24px */
+      padding: 1em 0;
+    }
+  </style>
+</head>
+<body>
+  <p>There were four of us—George, and William Samuel Harris, and myself, and Montmorency.  We were sitting in my room, smoking, and talking about how bad we were—bad from a medical point of view I mean, of course.</p>
+  <p>We were all feeling seedy, and we were getting quite nervous about it.  Harris said he felt such extraordinary fits of giddiness come over him at times, that he hardly knew what he was doing; and then George said that he had fits of giddiness too, and hardly knew what he was doing.  With me, it was my liver that was out of order.</p>
+  <p class="aside">I knew it was my liver that was out of order, because I had just been reading a patent liver-pill circular, in which were detailed the various symptoms by which a man could tell when his liver was out of order.  I had them all.</p>
+</body>
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Example 14 — Controlling the duration of a transition with transition-duration (Figure 12-18)</title>
+<style>
+/* Example 14 — Controlling the duration of a transition with transition-duration (Figure 12-18) */
+/* From Beginning HTML5 and CSS3 — The Web Evolved http://thewebevolved.com/ */
+body {
+	width: 80%;
+	max-width: 42em;
+	margin: auto;
+	font: 1em/1.5 Georgia, serif;
+}
+h1 {
+	font-weight: normal;
+}
+hr,
+footer {
+	margin: 2.5em 0;
+}
+pre {
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+}
+pre,
+code,
+samp,
+var {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+figcaption {
+	clear: left;
+	padding-top: 1.5em;
+}
+
+figure {
+	height: 12em;
+}
+figure div {
+  float: left;
+  font-size: 1.5em;
+  width: 20%;
+  margin: 0 15% .75em 0;
+  border: 3px solid #000;
+  border-radius: .5em;
+  padding: .33em;
+  background: #fff;
+  text-align: center;
+  -webkit-transition-property: all;
+     -moz-transition-property: all;
+      -ms-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
+  /* Making the transition a little more obvious */
+  -webkit-transform: scale(0.7);
+     -moz-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+       -o-transform: scale(0.7);
+          transform: scale(0.7);
+}
+figure .one {
+  -webkit-transition-duration: .2s;
+     -moz-transition-duration: .2s;
+      -ms-transition-duration: .2s;
+       -o-transition-duration: .2s;
+          transition-duration: .2s;
+}
+figure .two {
+  -webkit-transition-duration: .4s;
+     -moz-transition-duration: .4s;
+      -ms-transition-duration: .4s;
+       -o-transition-duration: .4s;
+          transition-duration: .4s;
+}
+figure .three {
+  margin-right: 0;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+      -ms-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+figure:hover div {
+  -webkit-transform: scale(1.2);
+     -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+       -o-transform: scale(1.2);
+          transform: scale(1.2);
+}
+</style>
+</head>
+<body>
+<h1>Example 14 — transition-duration (Figure 12-18)</h1>
+
+<figure id="transition-durations" class="web-only group">
+<pre class="callout"><code>.one {transition-duration: .2s;}
+.two {transition-duration: .4s;}
+.three {transition-duration: 1s;}</code></pre>
+<div class="one"><code>.2s</code>/<code>200ms</code></div>
+<div class="two"><code>.4s</code>/<code>400ms</code></div>
+<div class="three"><code>1s</code>/<code>1000ms</code></div>
+<figcaption>A comparison of three transition durations</figcaption>
+</figure>
+
+<hr />
+
+<ul>
+	<li><a href="http://dev.w3.org/csswg/css3-transitions/#transition-duration-property" title="CSS Transitions">CSS Transitions — The ‘transition-duration’ property</a></li>
+	<li><a href="http://dabblet.com/gist/4187444" title="dabblet.com">This example on Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 12</footer>
+
+</body>
+</html>

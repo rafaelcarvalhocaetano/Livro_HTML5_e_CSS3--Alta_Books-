@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=UTF-8>
+  <title>JavaScript Image Replacement Technique | Web Evolved Chapter 10</title>    
+  <script>
+    window.onload=function(){
+    // WARNING: this script replaces all instances of h1s with the same image. 
+    // Read the original script to do it right: www.quirksmode.org/dom/fir.html
+
+    function init() {
+      var W3CDOM = (document.createElement && document.getElementsByTagName);
+      if (!W3CDOM) return;
+      
+      var test = new Image();
+      test.src = 'http://placekitten.com/400/20';
+      test.onload = imageReplacement();
+    }
+
+    function imageReplacement() {
+      replaceThem(document.getElementsByTagName('h1'));
+    }
+
+    function replaceThem(x) {
+      var replacedimage = document.createElement('img');
+      for (var i=0;i<x.length;i++) {
+          if (x[i].id) {
+              var y = replacedimage.cloneNode(true);
+              y.src = 'http://placekitten.com/400/20';
+              y.alt = x[i].firstChild.nodeValue;
+              x[i].replaceChild(y,x[i].firstChild);
+          }
+      }
+    }
+
+    init();
+    }
+  </script>
+</head>
+<body>
+  <h1 id="page-header">JavaScript Image Replacement</h1>  
+</body>
+</html>
+

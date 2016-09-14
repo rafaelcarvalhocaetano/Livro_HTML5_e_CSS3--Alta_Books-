@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Example 26 — animation-fill-mode (Figure 12-31)</title>
+<style>
+/* Example 26 — animation-fill-mode (Figure 12-31) */
+/* From Beginning HTML5 and CSS3 — The Web Evolved http://thewebevolved.com/ */
+body {
+	width: 80%;
+	max-width: 42em;
+	margin: auto;
+	font: 1em/1.5 Georgia, serif;
+}
+h1 {
+	font-weight: normal;
+}
+hr,
+footer {
+	margin: 2.5em 0;
+}
+pre {
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+}
+pre,
+code,
+samp,
+var {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+figcaption {
+	clear: left;
+	padding-top: 1.5em;
+	margin-top: 13.3em;
+}
+.relative {position: relative;}
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  margin: 0 0 .5em;
+  border: 3px solid #000;
+  border-radius: .5em;
+  padding: .33em;
+  background: #fff;
+  text-align: center;
+}
+.fill-forwards {top: 2.66em;}
+.fill-backwards {top: 5.32em;}
+.fill-both {top: 7.98em;}
+figure code {padding: 0 2px;}
+/* Opera rules are for checking support when they implement */
+figure:hover .box {
+  -webkit-animation-name: pushit;
+     -moz-animation-name: pushit;
+      -ms-animation-name: pushit;
+       -o-animation-name: pushit;
+  -webkit-animation-duration: 3s;
+     -moz-animation-duration: 3s;
+      -ms-animation-duration: 3s;
+       -o-animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+     -moz-animation-delay: 1s;
+      -ms-animation-delay: 1s;
+       -o-animation-delay: 1s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+}
+figure:hover .fill-forwards {
+  -webkit-animation-fill-mode: forwards;
+     -moz-animation-fill-mode: forwards;
+      -ms-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+}
+figure:hover .fill-backwards {
+  -webkit-animation-fill-mode: backwards;
+     -moz-animation-fill-mode: backwards;
+      -ms-animation-fill-mode: backwards;
+       -o-animation-fill-mode: backwards;
+}
+figure:hover .fill-both {
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+}
+@-webkit-keyframes pushit {
+  0% {background-color: #f1c6df;}
+  to {left: 100%;}
+}
+@-moz-keyframes pushit {
+  0% {background-color: #f1c6df;}
+  to {left: 100%;}
+}
+@-ms-keyframes pushit {
+  0% {background-color: #f1c6df;}
+  to {left: 100%;}
+}
+@-o-keyframes pushit {
+  0% {background-color: #f1c6df;}
+  to {left: 100%;}
+}
+</style>
+</head>
+<body>
+<h1>Example 26 — animation-fill-mode (Figure 12-31)</h1>
+
+<figure id="a-fill-mode">
+<pre class="callout"><code>:hover .box {
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+@keyframes pushit {
+  0% {background-color: #f1c6df;} /* start pink */
+  to {left: 100%;} /* end on the right */
+}
+/* animation-fill-mode is none by default */
+  /* forwards: keep the animation’s final state when it ends */
+:hover .fill-forwards {animation-fill-mode: forwards;}
+  /* backwards: use the from/0% keyframe styles during animation-delay */
+:hover .fill-backwards {animation-fill-mode: backwards;}
+  /* both: the same as forwards and backwards */
+:hover .fill-both {animation-fill-mode: both;}
+</code></pre>
+<div class="relative">
+<div class="box"><code>none</code></div>
+<div class="box fill-forwards"><code>forwards</code></div>
+<div class="box fill-backwards"><code>backwards</code></div>
+<div class="box fill-both"><code>both</code></div>
+</div>
+<figcaption>Examples of the four <code>animation-fill-mode</code> values: <code>none</code>, <code>forwards</code>, <code>backwards</code>, and <code>both</code></figcaption>
+</figure>
+
+<p>The initial keyframe has a stylish pink <code>background-color</code>, but the animation also has a one second delay. The <code>backwards</code> and <code>both</code> values apply the <code>0%</code> keyframe’s style during the <code>animation-delay</code>. The <code>forwards</code> and <code>both</code> values keep the last keyframe’s styles, rather than reverting to the element’s intrinsic style. This animation is triggered on <code>:hover</code>, so in this example keeping the last keyframe’s styles (via <code>forwards</code> or <code>both</code>) will only apply while mousing over the element.</p>
+
+<hr />
+
+<ul>
+	<li><a href="http://dev.w3.org/csswg/css3-animations/#animation-fill-mode-property" title="CSS Animations">CSS Animations — The ‘animation-fill-mode’ Property</a></li>
+	<li><a href="http://dabblet.com/gist/4187869" title="dabblet.com">This example on Dabblet</a></li>
+</ul>
+
+<footer>From <a href="http://thewebevolved.com/"><cite>Beginning HTML5 and CSS3 — The Web Evolved</cite></a>, Chapter 12</footer>
+
+</body>
+</html>
