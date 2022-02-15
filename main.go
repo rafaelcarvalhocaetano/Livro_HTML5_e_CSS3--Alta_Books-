@@ -34,7 +34,7 @@ func main() {
 	configMap := &kfk.ConfigMap{
 		"bootstrap.servers": "kafka:9094",
 		"client.id":         "emailapp",
-		"group.id":          "kafka-connect",
+		"group.id":          "emailapp",
 	}
 
 	topics := []string{"emails"}

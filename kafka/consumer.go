@@ -1,6 +1,10 @@
 package kafka
 
-import kfk "github.com/confluentinc/confluent-kafka-go/kafka"
+import (
+	"fmt"
+
+	kfk "github.com/confluentinc/confluent-kafka-go/kafka"
+)
 
 type Consumer struct {
 	Topics    []string
@@ -28,5 +32,6 @@ func (c *Consumer) Consume(msgChannel chan *kfk.Message) error {
 		if err == nil {
 			msgChannel <- msg
 		}
+		fmt.Println("Error: ", err)
 	}
 }
